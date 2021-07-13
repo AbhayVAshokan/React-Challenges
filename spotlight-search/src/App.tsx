@@ -29,12 +29,19 @@ const App: React.FC<{}> = () => {
   // Function to perform onClick function on individual suggestions
   const onSuggestionClick = (choice: string) => {
     setValue(choice);
+    setSuggestions([]);
   };
 
   return (
     <div className="h-screen bg-background bg-cover bg-no-repeat flex flex-col items-center">
-      <InputField value={value} onChange={onInputChange} />
-      <Suggestions suggestions={suggestions} onClick={onSuggestionClick} />
+      <InputField
+        value={value}
+        onChange={onInputChange}
+        hasResults={suggestions.length > 0}
+      />
+      {suggestions.length > 0 && (
+        <Suggestions suggestions={suggestions} onClick={onSuggestionClick} />
+      )}
     </div>
   );
 };

@@ -1,11 +1,27 @@
 interface Props {
   value: string;
+  hasResults: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-const InputField: React.FC<Props> = ({ value, onChange }) => {
+const InputField: React.FC<Props> = ({ value, onChange, hasResults }) => {
   return (
-    <div className="flex bg-gradient-to-b from-black via-gray-800 to-black opacity-75 pl-2 pr-2 pt-1 pb-1 rounded-xl mt-52 w-2/5">
+    <div
+      className={[
+        "flex",
+        "bg-gray-800",
+        "opacity-75",
+        "pl-2",
+        "pr-2",
+        "pt-1",
+        "pb-1",
+        "mt-52",
+        "w-2/5",
+        "backdrop-filter",
+        "backdrop-blur-sm",
+        hasResults ? "rounded-t-xl" : "rounded-xl",
+      ].join(" ")}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-8 w-8 mt-auto mb-auto ml-2 mr-2"
@@ -22,9 +38,10 @@ const InputField: React.FC<Props> = ({ value, onChange }) => {
       </svg>
       <input
         value={value}
+        autoFocus
         onChange={onChange}
         placeholder="Spotlight Search"
-        className="top-5 bg-gradient-to-b from-black via-gray-800 to-black opacity-75 text-4xl font-light text-white outline-none"
+        className="top-5 bg-gray-800 backdrop-filter backdrop-blur-sm opacity-75 text-4xl font-light text-white outline-none"
       />
     </div>
   );
