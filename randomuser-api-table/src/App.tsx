@@ -84,6 +84,25 @@ const App: React.FC<{}> = () => {
   // Table header items
   const headers = ["Name", "Gender", "Email", "DOB"];
 
+  // Search item value
+  const [value, setValue] = useState<string>("");
+
+  // Function to perform filtering operation on search
+  const onSearchItemChange:
+    | React.ChangeEventHandler<HTMLInputElement>
+    | undefined = (e) => {
+    setValue(e.target.value);
+  };
+
+  // Function to return all users filtered by the entered value
+  const filterUsers = (search: string) => {
+    return users.filter((user) =>
+      JSON.stringify(Object.values(user))
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+  };
+
   // Populating users on first render
   useEffect(() => {
     axios.get("https://randomuser.me/api?results=500").then((res) => {
@@ -100,13 +119,13 @@ const App: React.FC<{}> = () => {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar onChange={onSearchItemChange} value={value} />
       <table>
         <thead>
           {headers.map((header) => getTableHeaderItem(header, Direction.DOWN))}
         </thead>
         <tbody>
-          {users.map((user) => (
+          {filterUsers(value).map((user) => (
             <TableItem
               key={`${user.name}__${Math.random().toString().substr(2)}`}
               name={user.name}

@@ -1,6 +1,9 @@
-interface Props {}
+interface Props {
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+}
 
-const SearchBar: React.FC<Props> = () => {
+const SearchBar: React.FC<Props> = ({ value, onChange }) => {
   return (
     <div className="flex">
       <div className="flex">
@@ -18,7 +21,11 @@ const SearchBar: React.FC<Props> = () => {
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           />
         </svg>
-        <input autoFocus placeholder="Search by name, gender, email or DOB" />
+        <input
+          autoFocus
+          placeholder="Search by name, gender, or email"
+          onChange={onChange}
+        />
       </div>
       <button className="flex">
         <svg
