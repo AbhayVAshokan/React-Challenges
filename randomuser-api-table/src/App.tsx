@@ -214,7 +214,7 @@ const App: React.FC<{}> = () => {
   };
 
   return (
-    <>
+    <div className="mx-10">
       <SearchBar
         onChange={onSearchItemChange}
         value={value}
@@ -234,7 +234,7 @@ const App: React.FC<{}> = () => {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

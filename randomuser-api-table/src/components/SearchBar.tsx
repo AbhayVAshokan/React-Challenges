@@ -13,11 +13,11 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ value, onChange, exportData }) => {
   return (
-    <div className="flex">
-      <div className="flex">
+    <div className="flex justify-between bg-gray-50 p-2 rounded-2xl my-5 w-full">
+      <div className="flex bg-white border-gray-200 rounded-xl shadow-md px-3 w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-5 w-5 text-blue-900 my-auto mr-2 cursor-pointer"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -33,6 +33,7 @@ const SearchBar: React.FC<Props> = ({ value, onChange, exportData }) => {
           autoFocus
           placeholder="Search by name, gender, or email"
           onChange={onChange}
+          className="outline-none text-sm w-full"
         />
       </div>
       <ExportDropdown exportData={exportData} />

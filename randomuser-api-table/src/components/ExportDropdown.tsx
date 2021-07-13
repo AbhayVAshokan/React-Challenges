@@ -16,14 +16,14 @@ const ExportDropdown: React.FC<Props> = ({ exportData }) => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block mx-5">
       <button
-        className="flex"
+        className="flex p-2 border-2 border-gray-200 rounded-md shadow-md text-blue-900 bg-white font-bold transform duration-200 hover:scale-105 hover:bg-blue-50"
         onClick={() => setShowDropdown((show: boolean) => !show)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-6 w-6 mr-1"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -38,7 +38,7 @@ const ExportDropdown: React.FC<Props> = ({ exportData }) => {
         Export
       </button>
       {showDropdown && (
-        <div className="absolute">
+        <div className="absolute bg-white shadow-md rounded-lg w-36 h-10 flex items-center justify-center hover:bg-blue-100 font-semibold text-gray-500">
           <CSVLink data={exportData}>Export as .csv</CSVLink>
         </div>
       )}
