@@ -19,6 +19,7 @@ const InputField: React.FC<Props> = ({ value, onChange, hasResults }) => {
         "w-2/5",
         "backdrop-filter",
         "backdrop-blur-sm",
+        "shadow-2xl",
         hasResults ? "rounded-t-xl" : "rounded-xl",
       ].join(" ")}
     >
