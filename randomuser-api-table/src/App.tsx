@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import TableItem from "./components/TableItem";
 
@@ -19,11 +18,19 @@ interface APIResponse {
 }
 
 // Interface for table data
-interface Data {
+interface User {
   name: string;
   gender: string;
   dob: string;
   email: string;
+}
+
+// Interface for sortConfig
+interface SortConfig {
+  name: Direction;
+  gender: Direction;
+  dob: Direction;
+  email: Direction;
 }
 
 // Direction of arrow inside table header element
@@ -33,56 +40,61 @@ enum Direction {
   HIDDEN,
 }
 
-// Return table header item
-const getTableHeaderItem = (title: string, direction = Direction.HIDDEN) => {
-  return (
-    <th key={title}>
-      <div className="flex">
-        <p>{title}</p>
-        {Direction.UP ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M7 11l5-5m0 0l5 5m-5-5v12"
-            />
-          </svg>
-        ) : Direction.DOWN ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17 13l-5 5m0 0l-5-5m5 5V6"
-            />
-          </svg>
-        ) : (
-          <div />
-        )}{" "}
-      </div>
-    </th>
-  );
+// Sort users according to the selected sort config
+// @ts-ignore
+const sortUsers: Array<User> = (users: Array<User>, sortConfig: SortConfig) => {
+  // Sort by name
+  if (sortConfig.name !== Direction.HIDDEN)
+    return users.sort((user1: User, user2: User) => {
+      return sortConfig.name === Direction.DOWN
+        ? user1.name < user2.name
+          ? -1
+          : 1
+        : user1.name > user2.name
+        ? -1
+        : 1;
+    });
+  // Sort by gender
+  if (sortConfig.gender !== Direction.HIDDEN)
+    return users.sort((user1: User, user2: User) => {
+      return sortConfig.gender === Direction.DOWN
+        ? user1.gender < user2.gender
+          ? -1
+          : 1
+        : user1.gender > user2.gender
+        ? -1
+        : 1;
+    });
+  // Sort by email
+  if (sortConfig.email !== Direction.HIDDEN)
+    return users.sort((user1: User, user2: User) => {
+      return sortConfig.email === Direction.DOWN
+        ? user1.email < user2.email
+          ? -1
+          : 1
+        : user1.email > user2.email
+        ? -1
+        : 1;
+    });
+  // Sort by dob
+  if (sortConfig.dob !== Direction.HIDDEN)
+    return users.sort((user1: User, user2: User) => {
+      return sortConfig.dob === Direction.DOWN
+        ? new Date(user1.dob) < new Date(user2.dob)
+          ? -1
+          : 1
+        : new Date(user1.dob) > new Date(user2.dob)
+        ? -1
+        : 1;
+    });
 };
 
 const App: React.FC<{}> = () => {
   // List of all users fetched by API
-  const [users, setUsers] = useState<Array<Data>>([]);
+  const [users, setUsers] = useState<Array<User>>([]);
 
   // Table header items
-  const headers = ["Name", "Gender", "Email", "DOB"];
+  const headers = ["Name", "Gender", "DOB", "Email"];
 
   // Search item value
   const [value, setValue] = useState<string>("");
@@ -94,12 +106,24 @@ const App: React.FC<{}> = () => {
     setValue(e.target.value);
   };
 
+  // Config to sort table items
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
+    name: Direction.DOWN,
+    gender: Direction.HIDDEN,
+    dob: Direction.HIDDEN,
+    email: Direction.HIDDEN,
+  });
+
   // Function to return all users filtered by the entered value
   const filterUsers = (search: string) => {
-    return users.filter((user) =>
-      JSON.stringify(Object.values(user))
-        .toLowerCase()
-        .includes(search.toLowerCase())
+    // @ts-ignore
+    return sortUsers(
+      users.filter((user) =>
+        JSON.stringify(Object.values(user))
+          .toLowerCase()
+          .includes(search.toLowerCase())
+      ),
+      sortConfig
     );
   };
 
@@ -117,6 +141,78 @@ const App: React.FC<{}> = () => {
     });
   }, []);
 
+  // Return table header item
+  const getTableHeaderItem = (title: string) => {
+    // Key for sortConfig
+    const headerKey = `${title.toLowerCase()}`;
+
+    // @ts-ignore
+    let direction = sortConfig[headerKey];
+
+    const onClick = () => {
+      if (direction === Direction.HIDDEN) direction = Direction.DOWN;
+      else
+        direction = direction === Direction.UP ? Direction.DOWN : Direction.UP;
+
+      const config = {
+        name: Direction.HIDDEN,
+        gender: Direction.HIDDEN,
+        dob: Direction.HIDDEN,
+        email: Direction.HIDDEN,
+      };
+
+      if (headerKey === "name") config.name = direction;
+      else if (headerKey === "email") config.email = direction;
+      else if (headerKey === "dob") config.dob = direction;
+      else config.gender = direction;
+
+      setSortConfig({
+        ...config,
+      });
+    };
+
+    return (
+      <th key={title} onClick={onClick}>
+        <div className="flex">
+          <p>{title}</p>
+          {direction === Direction.UP ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M7 11l5-5m0 0l5 5m-5-5v12"
+              />
+            </svg>
+          ) : direction === Direction.DOWN ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 13l-5 5m0 0l-5-5m5 5V6"
+              />
+            </svg>
+          ) : (
+            <div />
+          )}{" "}
+        </div>
+      </th>
+    );
+  };
+
   return (
     <>
       <SearchBar
@@ -125,11 +221,9 @@ const App: React.FC<{}> = () => {
         exportData={filterUsers(value)}
       />
       <table>
-        <thead>
-          {headers.map((header) => getTableHeaderItem(header, Direction.DOWN))}
-        </thead>
+        <thead>{headers.map((header) => getTableHeaderItem(header))}</thead>
         <tbody>
-          {filterUsers(value).map((user) => (
+          {filterUsers(value).map((user: User) => (
             <TableItem
               key={`${user.name}__${Math.random().toString().substr(2)}`}
               name={user.name}
