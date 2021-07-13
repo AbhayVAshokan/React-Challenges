@@ -119,7 +119,11 @@ const App: React.FC<{}> = () => {
 
   return (
     <>
-      <SearchBar onChange={onSearchItemChange} value={value} />
+      <SearchBar
+        onChange={onSearchItemChange}
+        value={value}
+        exportData={filterUsers(value)}
+      />
       <table>
         <thead>
           {headers.map((header) => getTableHeaderItem(header, Direction.DOWN))}
