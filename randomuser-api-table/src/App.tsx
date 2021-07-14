@@ -237,7 +237,7 @@ const App: React.FC<{}> = () => {
         exportData={filterUsers(value)}
       />
       <table>
-        <thead className="bg-gray-300 mb-5 rounded-full sticky top-20 z-10 table">
+        <thead className="bg-gray-300 mb-5 rounded-full sticky top-20 z-10">
           {headers.map((header) => getTableHeaderItem(header))}
         </thead>
         <tbody>
