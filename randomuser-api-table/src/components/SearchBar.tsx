@@ -13,7 +13,7 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ value, onChange, exportData }) => {
   return (
-    <div className="flex justify-between bg-gray-50 p-2 rounded-2xl mb-5 w-full sticky top-5 z-10">
+    <div className="flex justify-between bg-gray-50 p-2 rounded-2xl mb-5 w-full sticky top-5 z-20">
       <div className="flex bg-white border-gray-200 rounded-xl shadow-lg px-3 w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"

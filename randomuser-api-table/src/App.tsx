@@ -132,6 +132,35 @@ const App: React.FC<{}> = () => {
     );
   };
 
+  // Function to get export data
+  const getExportData = (value: string) => {
+    const allData = filterUsers(value);
+    if (allData.some((user: User) => user.selected))
+      return allData
+        .filter((user: User) => user.selected === true)
+        .map((user: User) => ({
+          name: user.name,
+          gender: user.gender,
+          dob: new Date(user.dob).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          email: user.email,
+        }));
+    else
+      return allData.map((user: User) => ({
+        name: user.name,
+        gender: user.gender,
+        dob: new Date(user.dob).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
+        email: user.email,
+      }));
+  };
+
   // Populating users on first render
   useEffect(() => {
     axios.get("https://randomuser.me/api?results=500").then((res) => {
@@ -236,7 +265,7 @@ const App: React.FC<{}> = () => {
       <SearchBar
         onChange={onSearchItemChange}
         value={value}
-        exportData={filterUsers(value)}
+        exportData={getExportData(value)}
       />
       <table>
         <thead className="bg-gray-300 mb-5 rounded-full sticky top-20 z-10">
