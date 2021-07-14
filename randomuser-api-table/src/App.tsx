@@ -15,6 +15,9 @@ interface APIResponse {
     date: string;
   };
   email: string;
+  picture: {
+    thumbnail: string;
+  };
 }
 
 // Interface for table data
@@ -23,6 +26,7 @@ interface User {
   gender: string;
   dob: string;
   email: string;
+  picture: string;
 }
 
 // Interface for sortConfig
@@ -136,6 +140,7 @@ const App: React.FC<{}> = () => {
           gender: item.gender,
           dob: item.dob.date,
           email: item.email,
+          picture: item.picture.thumbnail,
         }))
       );
     });
@@ -173,12 +178,23 @@ const App: React.FC<{}> = () => {
 
     return (
       <th key={title} onClick={onClick}>
-        <div className="flex">
-          <p>{title}</p>
+        <div className="flex items-center cursor-pointer py-3 px-10">
+          <p
+            className={[
+              "font-bold",
+              "transform",
+              "duration-200",
+              "hover:scale-125",
+              "hover:text-black",
+              direction !== Direction.HIDDEN ? "text-black" : "text-gray-500",
+            ].join(" ")}
+          >
+            {title}
+          </p>
           {direction === Direction.UP ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -193,7 +209,7 @@ const App: React.FC<{}> = () => {
           ) : direction === Direction.DOWN ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -214,14 +230,16 @@ const App: React.FC<{}> = () => {
   };
 
   return (
-    <div className="mx-10">
+    <div className="flex flex-col justify-center mx-20">
       <SearchBar
         onChange={onSearchItemChange}
         value={value}
         exportData={filterUsers(value)}
       />
       <table>
-        <thead>{headers.map((header) => getTableHeaderItem(header))}</thead>
+        <thead className="bg-gray-300 mb-5 rounded-full sticky top-20 z-10 table">
+          {headers.map((header) => getTableHeaderItem(header))}
+        </thead>
         <tbody>
           {filterUsers(value).map((user: User) => (
             <TableItem
@@ -230,6 +248,7 @@ const App: React.FC<{}> = () => {
               gender={user.gender}
               email={user.email}
               dob={new Date(user.dob)}
+              picture={user.picture}
             />
           ))}
         </tbody>
