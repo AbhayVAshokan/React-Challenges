@@ -27,6 +27,7 @@ interface User {
   dob: string;
   email: string;
   picture: string;
+  selected: boolean;
 }
 
 // Interface for sortConfig
@@ -141,6 +142,7 @@ const App: React.FC<{}> = () => {
           dob: item.dob.date,
           email: item.email,
           picture: item.picture.thumbnail,
+          selected: false,
         }))
       );
     });
@@ -249,6 +251,16 @@ const App: React.FC<{}> = () => {
               email={user.email}
               dob={new Date(user.dob)}
               picture={user.picture}
+              selected={user.selected}
+              onClick={() =>
+                setUsers((users) =>
+                  users.map((_user) => {
+                    if (user.name === _user.name)
+                      return { ..._user, selected: !_user.selected };
+                    else return _user;
+                  })
+                )
+              }
             />
           ))}
         </tbody>

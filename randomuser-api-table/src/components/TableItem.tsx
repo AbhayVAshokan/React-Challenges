@@ -4,6 +4,8 @@ interface Props {
   dob: Date;
   email: string;
   picture: string;
+  selected: boolean;
+  onClick: () => void;
 }
 
 // Format date to Month (long) date (numeric), year (long) format
@@ -15,9 +17,27 @@ const getFormattedDate = (date: Date) => {
   });
 };
 
-const TableItem: React.FC<Props> = ({ name, gender, dob, email, picture }) => {
+const TableItem: React.FC<Props> = ({
+  name,
+  gender,
+  dob,
+  email,
+  picture,
+  selected,
+  onClick,
+}) => {
   return (
-    <tr className="cursor-pointer transform duration-200 hover:bg-gray-100 hover:scale-105">
+    <tr
+      onClick={onClick}
+      className={[
+        "cursor-pointer",
+        "transform",
+        "duration-200",
+        selected ? "hover:bg-green-200" : "hover:bg-gray-100",
+        "hover:scale-105",
+        selected ? ["scale-105", "bg-green-100"].join(" ") : "",
+      ].join(" ")}
+    >
       <td className="p-2">
         <div className="flex items-center">
           <img
