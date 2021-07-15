@@ -26,7 +26,6 @@ const AddTodoBar: React.FC<Props> = ({ addTodo }) => {
     values: FormInterface,
     { resetForm }: { resetForm: () => void }
   ) => {
-    console.log("calling onsubmit");
     addTodo(values.title, values.description);
     resetForm();
   };

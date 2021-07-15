@@ -43,7 +43,7 @@ const App: React.FC<{}> = () => {
   };
 
   return (
-    <>
+    <div className="w-full sm:w-9/12 lg:w-7/12 mx-auto my-20">
       <AddTodoBar
         addTodo={(title: string, description: string) =>
           addTodo(title, description)
@@ -53,6 +53,7 @@ const App: React.FC<{}> = () => {
         return (
           <TodoItem
             key={todo.id}
+            id={todo.id}
             title={todo.title}
             description={todo.description}
             completed={todo.completed}
@@ -61,7 +62,7 @@ const App: React.FC<{}> = () => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 
