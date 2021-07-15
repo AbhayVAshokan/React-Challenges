@@ -16,16 +16,50 @@ const TodoItem: React.FC<Props> = ({
   removeTodo,
 }) => {
   return (
-    <div className="flex justify-between">
+    <div
+      className={[
+        "flex",
+        "justify-between",
+        "bg-gray-50",
+        "rounded-lg",
+        "py-2",
+        "px-5",
+        "my-2",
+        "transition",
+        "duration-200",
+        "hover:scale-105",
+        "hover:bg-gray-100",
+        "hover:inner-shadow-gray-100",
+        "shadow-sm",
+        completed ? "opacity-60" : "opacity-100",
+      ].join(" ")}
+    >
       <div className="flex cursor-pointer">
         <input
           type="checkbox"
           checked={completed}
           onChange={() => completedTodo(id)}
+          className="h-4 w-4 cursor-pointer mr-2 mt-1"
         />
         <div>
-          <h3 className={[completed ? "strike" : ""].join(" ")}>{title}</h3>
-          <p className={[completed ? "" : ""].join(" ")}>{description}</p>
+          <h3
+            className={[
+              completed ? "line-through" : "",
+              completed ? "text-gray-400" : "text-black",
+              "font-bold",
+              "text-lg",
+            ].join(" ")}
+          >
+            {title}
+          </h3>
+          <p
+            className={[
+              completed ? "text-gray-300" : "text-gray-700",
+              "text-xs",
+            ].join(" ")}
+          >
+            {description}
+          </p>
         </div>
       </div>
       <svg

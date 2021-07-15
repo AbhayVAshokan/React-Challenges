@@ -49,6 +49,7 @@ const App: React.FC<{}> = () => {
           addTodo(title, description)
         }
       />
+      <br />
       {todos.map((todo) => {
         return (
           <TodoItem

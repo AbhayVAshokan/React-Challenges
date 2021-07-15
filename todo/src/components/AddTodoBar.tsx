@@ -35,9 +35,9 @@ const AddTodoBar: React.FC<Props> = ({ addTodo }) => {
       initialValues={initialValues}
       validate={validate}
       onSubmit={onSubmit}
-      className="sticky top-20"
+      className="sticky top-20 shadow-lg"
     >
-      <Form>
+      <Form autoComplete="off">
         <div className="flex my-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const AddTodoBar: React.FC<Props> = ({ addTodo }) => {
             name="description"
             type="textarea"
             placeholder="Enter your description"
-            className="bg-yellow-50 rounded-2xl p-2 w-full h-20 outline-none text-sm text-gray-700 font-medium shadow-2xl"
+            className="bg-yellow-50 rounded-2xl p-2 w-full h-20 outline-none text-sm text-gray-700 font-medium shadow-lg"
           />
           <button
             type="submit"
