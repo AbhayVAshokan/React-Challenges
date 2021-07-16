@@ -1,6 +1,6 @@
 const SideBar: React.FC<{}> = () => {
   return (
-    <div className="bg-white w-5/12 text-xs font-medium">
+    <div className="bg-white w-5/12 text-xs font-medium dark:bg-dark-outerBody dark:text-gray-200">
       <div className="flex items-center cursor-default">
         <svg
           xmlns="http://www.w3.org/2000/svg"

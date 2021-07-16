@@ -19,10 +19,10 @@ const SystemPreferences: React.FC<Props> = ({
         <img
           src={wallpaper}
           alt="Wallpaper preview"
-          className="cover h-20 w-32 p-2 border-white border rounded-lg bg-gray-300"
+          className="cover h-20 w-32 p-2 border-white border rounded-lg bg-gray-300 dark:bg-dark-innerBody dark:border-gray-600"
         />
         <div className="flex items-center justify-between">
-          <div className="text-sm bg-white rounded-sm pl-1 pr-0.5 flex items-center shadow-md ml-5 font-medium">
+          <div className="text-sm bg-white rounded-md pl-1 pr-0.5 flex items-center shadow-md ml-5 font-medium dark:bg-dark-dropDowns dark:text-white">
             <p className="w-40">Fill Screen</p>
             <div>
               <svg
@@ -57,11 +57,12 @@ const SystemPreferences: React.FC<Props> = ({
           </div>
         </div>
       </div>
+      <br />
 
       {/* Wallpaper Select */}
-      <div className="flex bg-white w-full">
+      <div className="flex bg-white w-full dark:bg-dark-outerBody">
         <SideBar />
-        <div className="border border-gray-300 flex flex-wrap justfy-start w-full pt-1 pb-2 pl-1">
+        <div className="border border-gray-300 flex flex-wrap justfy-start w-full pt-1 pb-2 pl-1 dark:border-gray-600">
           {wallpapers.map((wallpaper, index) => (
             <img
               src={wallpaper}
@@ -75,8 +76,10 @@ const SystemPreferences: React.FC<Props> = ({
       </div>
 
       <div className="flex mt-2">
-        <div className="flex bg-white text-sm rounded-md shadow-md border border-gray-300 cursor-default">
-          <p className="px-2 border-r border-gray-300">+</p>
+        <div className="flex bg-white text-sm rounded-md shadow-md border border-gray-300 cursor-default dark:bg-dark-title dark:border-gray-600 dark:text-white">
+          <p className="px-2 border-r border-gray-300 dark:border-gray-600">
+            +
+          </p>
           <p className="px-2">-</p>
         </div>
       </div>
