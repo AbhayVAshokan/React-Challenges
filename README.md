@@ -35,10 +35,8 @@ Things will start getting spicy here. I have chosen a complex UI for this one. T
 
 The main challenge is the dark theme toggle. It is easy to implement dark theme toggle using [Tailwind CSS](https://tailwindcss.com) as well as [Styled Components](https://styled-components.com). Feel free to experiment it with any other library. In my code, I have used the global system theme of your OS decide whether to use dark theme or not, instead of a dark theme toggle button.
 
-<div style="display:flex;">
-  <img src=".github/.images/light-theme.jpg" alt="Light Theme" width="50%" />
-  <img src=".github/.images/dark-theme.jpg" alt="Dark Theme" width="50%" />
-</div>
+<img src=".github/.images/light-theme.jpg" alt="Light Theme" width="60%" />
+<img src=".github/.images/dark-theme.jpg" alt="Dark Theme" width="60%" />
 
 ### 4. randomuserapi Table (Advanced)
 
