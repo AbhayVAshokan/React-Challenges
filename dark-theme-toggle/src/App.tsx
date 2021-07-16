@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components//Navbar/Navbar";
+import SystemPreferences from "./components/SystemPreferences/SystemPreferences";
 
 // Importing all wallpapers
 import Loki from "./assets/images/loki.jpg";
@@ -15,10 +16,11 @@ const App: React.FC<{}> = () => {
 
   return (
     <div
-      className="w-screen h-screen bg-cover"
+      className="w-screen h-screen bg-cover relative"
       style={{ backgroundImage: `url(${wallpaper})` }}
     >
       <Navbar />
+      <SystemPreferences />
     </div>
   );
 };

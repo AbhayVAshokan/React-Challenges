@@ -1,5 +1,5 @@
-import AppleLogo from "../assets/icons/apple.svg";
-import BatteryIcon from "../assets/icons/battery.svg";
+import AppleLogo from "../../assets/icons/apple.svg";
+import BatteryIcon from "../../assets/icons/battery.svg";
 
 // Get current date and time
 const getDateAndTime = () => {
