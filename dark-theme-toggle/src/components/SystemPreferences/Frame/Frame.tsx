@@ -1,9 +1,9 @@
 const Frame: React.FC<{}> = ({ children }) => {
   return (
-    <div className="rounded-2xl w-1/2 m-auto shadow-lg">
+    <div className="bg-gray-100 rounded-lg w-1/2 m-auto shadow-lg relative top-20">
       {/* Top bar */}
       <div className="flex items-center">
-        <div className="bg-gray-100 flex w-full p-1 items-center">
+        <div className="flex w-full p-1 items-center">
           <div className="h-3 w-3 rounded-full bg-red-500 mx-1 text-xs flex items-center justify-center text-red-500 hover:text-black cursor-default font-semibold">
             x
           </div>
@@ -82,7 +82,16 @@ const Frame: React.FC<{}> = ({ children }) => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 p-5">{children}</div>
+      <div className="flex items-center top-12 justify-center absolute w-full text-xs font-medium cursor-default">
+        <div className="rounded-l-md px-2 bg-white border-l border-t border-b border-gray-300 py-0.5">
+          Desktop
+        </div>
+        <div className="rounded-r-md px-2 bg-gray-200 border-r border-t border-b border-gray-300 py-0.5">
+          Screen Saver
+        </div>
+      </div>
+      <div className="rounded-md mx-4 mt-6 p-5 bg-gray-200">{children}</div>
+      <br />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Navbar: React.FC<{}> = () => {
   const menuItems: Array<string> = ["Edit", "View", "Window", "Help"];
 
   return (
-    <nav className="flex w-full backdrop-blur-lg text-white text-sm font-medium items-center justify-between">
+    <nav className="flex w-full backdrop-blur-2xl bg-black bg-opacity-20 text-white text-sm font-medium items-center justify-between">
       {/* Menu bar */}
       <div className="flex items-center">
         <img
