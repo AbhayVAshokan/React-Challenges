@@ -46,7 +46,7 @@ const InputField: React.FC<Props> = ({ value, onChange, hasResults }) => {
         autoFocus
         onChange={onChange}
         placeholder="Spotlight Search"
-        className="top-5 bg-gray-800 backdrop-filter backdrop-blur-sm opacity-75 text-4xl font-light text-white outline-none md:w-96 w-full lg:w-2/5"
+        className="top-5 bg-gray-800 backdrop-filter backdrop-blur-sm opacity-75 text-4xl font-light text-white outline-none md:w-96 w-full lg:w-full"
       />
     </div>
   );
