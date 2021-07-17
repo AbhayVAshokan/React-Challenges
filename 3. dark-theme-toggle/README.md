@@ -19,10 +19,9 @@ Toggling dark theme is possible either by using a button, or by using the system
 
 In Tailwind CSS, you can use the `.dark` class to toggle the dark theme. First, edit your `tailwind.config.js` file to add the following line:
 
-```javascript
+```diff
 - darkMode: false,
 + darkMode: "media",
-
 ```
 
 Now, the dark theme of the web app will be based on the system theme of your OS. For official documentation check [here](https://tailwindcss.com/docs/dark-mode).
