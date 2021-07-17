@@ -1,7 +1,5 @@
 # Dark Theme Toggle
 
-Final Result: [Dark Theme Toggle](https://AbhayVAshokan.github.io/React-Challenges/darktheme-toggle)
-
 Things will start getting spicy here. I have chosen a complex UI for this one. The aim is to build it with code readability in mind. There are scopes to use higher order components (HOC) to wrap the stateless functional components.
 
 ## Challenge Description

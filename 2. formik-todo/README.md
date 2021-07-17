@@ -1,7 +1,5 @@
 # Formik Todo
 
-Final Result: [Formik Todo](https://AbhayVAshokan.github.io/React-Challenges/formik-todo)
-
 If you have worked with React before, it is very likely that you have built a Todo application. This challenge is not just about building a Todo application, but also about building a form.
 
 Almost every website you build will have a form. Even if it is a trivial one, it throws a bunch of errors and eat up a lot of time. [Formik](https://formik.org) is one of the most popular libraries for building forms. It makes your lives easy. Just a few lines of code and viola, no more errors.

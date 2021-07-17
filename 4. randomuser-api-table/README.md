@@ -1,7 +1,5 @@
 # Random User API Table
 
-Final Result: [Random User API Table](https://AbhayVAshokan.github.io/React-Challenges/randomuserapi-table)
-
 This challenge steps up a little. All the real world applications that you build will involve API calls. For this challenge, you have to build a table that displays random users from [randomuser.me api](https://randomuser.me/api/) API.
 
 ## Challenge Description

@@ -15,8 +15,6 @@ I have used [React (TypeScript)](https://create-react-app.dev/docs/adding-typesc
 
 ### 1. Spotlight Search (Very Easy)
 
-Final Result: [Spotlight Search](https://AbhayVAshokan.github.io/React-Challenges/spotlight-search)
-
 [Spotligit Search](https://support.apple.com/guide/mac-help/spotlight-mchlp1008/mac) is one of the most useful tools in a Mac. It helps you quickly open any application, file, folder or a website from anywhere. This challenge uses the UI of Spotlight Search to create a simple word filter.
 
 In this challenge, load all the words in an array. You need to filter the words as you type in the search bar and display the results in a dropdown. This is to test your knowledge is basic React workflow and JavaScript utilities.
@@ -26,8 +24,6 @@ In this challenge, load all the words in an array. You need to filter the words 
 ---
 
 ### 2. Formik Todo (Easy)
-
-Final Result: [Formik Todo](https://AbhayVAshokan.github.io/React-Challenges/formik-todo)
 
 If you have worked with React before, it is very likely that you have built a Todo application. This challenge is not just about building a Todo application, but also about building a form.
 
@@ -41,8 +37,6 @@ In this challenge, you need to create a Todo application using Formik. It must b
 
 ### 3. Dark Theme Toggle (Intermediate)
 
-Final Result: [Dark theme Toggle](https://AbhayVAshokan.github.io/React-Challenges/darktheme-toggle)
-
 Things will start getting spicy here. I have chosen a complex UI for this one. The aim is to build it with code readability in mind. There are scopes to use higher order components (HOC) to wrap the stateless functional components.
 
 The main challenge is the dark theme toggle. It is easy to implement it using [Tailwind CSS](https://tailwindcss.com) or [Styled Components](https://styled-components.com). Feel free to experiment it with any other library.
@@ -55,8 +49,6 @@ Toggling dark theme is possible either by using a button, or by using the system
 ---
 
 ### 4. randomuserapi Table (Advanced)
-
-Final Result: [Random User API Table](https://AbhayVAshokan.github.io/React-Challenges/randomuserapi-table)
 
 This challenge steps up a little. All the real world applications that you build will involve API calls. For this challenge, you have to build a table that displays random users from [randomuser.me api](https://randomuser.me/api/) API.
 

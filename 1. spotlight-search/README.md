@@ -1,7 +1,5 @@
 # Spotlight Search
 
-Final Result: [Spotlight Search](https://AbhayVAshokan.github.io/React-Challenges/spotlight-search)
-
 [Spotligit Search](https://support.apple.com/guide/mac-help/spotlight-mchlp1008/mac) is one of the most useful tools in a Mac. It helps you quickly open any application, file, folder or a website from anywhere. This challenge uses the UI of Spotlight Search to create a simple word filter.
 
 ## Challenge Description
