@@ -9,14 +9,18 @@ const InputField: React.FC<Props> = ({ value, onChange, hasResults }) => {
     <div
       className={[
         "flex",
+        "absolute",
         "bg-gray-800",
         "opacity-75",
         "pl-2",
         "pr-2",
         "pt-1",
         "pb-1",
-        "mt-52",
-        "w-2/5",
+        "md:top-52",
+        "top-20",
+        "md:w-96",
+        "w-full",
+        "lg:w-2/5",
         "backdrop-filter",
         "backdrop-blur-sm",
         "shadow-2xl",
@@ -42,7 +46,7 @@ const InputField: React.FC<Props> = ({ value, onChange, hasResults }) => {
         autoFocus
         onChange={onChange}
         placeholder="Spotlight Search"
-        className="top-5 bg-gray-800 backdrop-filter backdrop-blur-sm opacity-75 text-4xl font-light text-white outline-none"
+        className="top-5 bg-gray-800 backdrop-filter backdrop-blur-sm opacity-75 text-4xl font-light text-white outline-none md:w-96 w-full lg:w-2/5"
       />
     </div>
   );

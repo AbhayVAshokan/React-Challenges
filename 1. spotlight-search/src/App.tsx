@@ -33,7 +33,7 @@ const App: React.FC<{}> = () => {
   };
 
   return (
-    <div className="h-screen bg-background bg-cover bg-no-repeat flex flex-col items-center">
+    <div className="h-screen bg-background bg-cover bg-no-repeat flex flex-col items-center relative">
       <InputField
         value={value}
         onChange={onInputChange}

@@ -5,7 +5,7 @@ interface Props {
 
 const Suggestions: React.FC<Props> = ({ suggestions, onClick }) => {
   return (
-    <ul className="w-2/5 p-3 rounded-b-2xl bg-opacity-75 bg-gray-800 max-h-96 overflow-scroll backdrop-filter backdrop-blur-sm shadow-2xl">
+    <ul className="md:w-96 w-full lg:w-2/5 p-3 rounded-b-2xl bg-opacity-75 bg-gray-800 max-h-96 overflow-scroll backdrop-filter backdrop-blur-sm shadow-2xl absolute md:top-64 top-32">
       {suggestions.map((suggestion, index) => (
         <li
           key={index}
