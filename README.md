@@ -19,6 +19,8 @@ In this challenge, load all the words in an array. You need to filter the words 
 
 <img src=".github/.images/spotlight-search.jpg" alt="Spotlight Search" width="60%" />
 
+---
+
 ### 2. Formik Todo (Easy)
 
 If you have worked with React before, it is very likely that you have built a Todo application. This challenge is not just about building a Todo application, but also about building a form.
@@ -29,6 +31,8 @@ In this challenge, you need to create a Todo application using Formik. It must b
 
 <img src=".github/.images/formik-todo.jpg" alt="Formik Todo" width="60%" />
 
+---
+
 ### 4. Dark Theme Toggle (Intermediate)
 
 Things will start getting spicy here. I have chosen a complex UI for this one. The aim is to build it with code readability in mind. There are scopes to use higher order components (HOC) to wrap the stateless functional components.
@@ -37,6 +41,8 @@ The main challenge is the dark theme toggle. It is easy to implement dark theme 
 
 <img src=".github/.images/light-theme.jpg" alt="Light Theme" width="60%" />
 <img src=".github/.images/dark-theme.jpg" alt="Dark Theme" width="60%" />
+
+---
 
 ### 4. randomuserapi Table (Advanced)
 
@@ -48,17 +54,25 @@ The users must have the provision to select multiple rows, and export it as csv.
 
 <img src=".github/.images/randomuserapi-table.jpg" alt="randomuser-api table" width="60%" />
 
+---
+
+### 5. React Router and Redux (Expert)
+
+I am looking for a fun idea that is not too long to be boring, but complex enough to be an expert category. If you have any good ideas, please share them here: [Issue#1](https://github.com/AbhayVAshokan/React-Challenges/issues/1).
+
 ## Setup
 
-Clone the repository
+If you want to have the exact setup as mine, then follow the steps below. But if you want to use your own setup, then you can skip this section.
 
-```bash
-git clone https://github.com/AbhayVAshokan/React-Challenges.git
+1. Create a React (TypeScript) project
+
+```
+npx create-react-app <challenge-name> --template=typescript
 ```
 
-That's it. You are all set.
+2. Add Tailwind CSS to your project: [Official Documentation](https://tailwindcss.com/docs/guides/create-react-app)
 
-There is no need for any API Keys or environment variables. It is recommended to to `yarn` as the package manager for installing all the packages.
+Try to keep third party libraries to a minimum.
 
 ## Contribution
 
