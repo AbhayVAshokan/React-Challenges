@@ -6,7 +6,11 @@ This challenge steps up a little. All the real world applications that you build
 
 <img src="../.github/.images/randomuserapi-table.jpg" alt="randomuser-api table" width="60%" />
 
-Well, that's the easy part. The table must have a search feature to filter out the users based on the search input (name, gender, email). The user can click on the table headers to sort according to the selected column (ascending and descending).
+Make an API call to [https://randomuser.me/api?results=500](https://randomuser.me/api?results=500) on first render. It will return a JSON array of 500 random users. Display selected fields of each user in the form of a table.
+
+Add a search field to the table. When the user enters a search term, filter out the users based on their name, gender, or email id.
+
+Make the column headers of the table as a sorting button. It must be able to sort it in ascending as well as descending order.
 
 The users must have the provision to select multiple rows, and export it as csv.
 
