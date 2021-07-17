@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/React-Challenges/static/css/main.70b8a625.chunk.css",
-    "main.js": "/React-Challenges/static/js/main.135c6c8a.chunk.js",
-    "main.js.map": "/React-Challenges/static/js/main.135c6c8a.chunk.js.map",
-    "runtime-main.js": "/React-Challenges/static/js/runtime-main.844e838f.js",
-    "runtime-main.js.map": "/React-Challenges/static/js/runtime-main.844e838f.js.map",
-    "static/js/2.b6f0ea32.chunk.js": "/React-Challenges/static/js/2.b6f0ea32.chunk.js",
-    "static/js/2.b6f0ea32.chunk.js.map": "/React-Challenges/static/js/2.b6f0ea32.chunk.js.map",
-    "static/js/3.485a3f5f.chunk.js": "/React-Challenges/static/js/3.485a3f5f.chunk.js",
-    "static/js/3.485a3f5f.chunk.js.map": "/React-Challenges/static/js/3.485a3f5f.chunk.js.map",
+    "main.css": "/React-Challenges/static/css/main.6ef14d14.chunk.css",
+    "main.js": "/React-Challenges/static/js/main.c6b4beb1.chunk.js",
+    "main.js.map": "/React-Challenges/static/js/main.c6b4beb1.chunk.js.map",
+    "runtime-main.js": "/React-Challenges/static/js/runtime-main.d6ad709e.js",
+    "runtime-main.js.map": "/React-Challenges/static/js/runtime-main.d6ad709e.js.map",
+    "static/js/2.fb7cc3fc.chunk.js": "/React-Challenges/static/js/2.fb7cc3fc.chunk.js",
+    "static/js/2.fb7cc3fc.chunk.js.map": "/React-Challenges/static/js/2.fb7cc3fc.chunk.js.map",
+    "static/js/3.600591e7.chunk.js": "/React-Challenges/static/js/3.600591e7.chunk.js",
+    "static/js/3.600591e7.chunk.js.map": "/React-Challenges/static/js/3.600591e7.chunk.js.map",
     "index.html": "/React-Challenges/index.html",
-    "static/css/main.70b8a625.chunk.css.map": "/React-Challenges/static/css/main.70b8a625.chunk.css.map",
-    "static/js/2.b6f0ea32.chunk.js.LICENSE.txt": "/React-Challenges/static/js/2.b6f0ea32.chunk.js.LICENSE.txt",
+    "static/css/main.6ef14d14.chunk.css.map": "/React-Challenges/static/css/main.6ef14d14.chunk.css.map",
+    "static/js/2.fb7cc3fc.chunk.js.LICENSE.txt": "/React-Challenges/static/js/2.fb7cc3fc.chunk.js.LICENSE.txt",
     "static/media/apple.ce9fd4bf.svg": "/React-Challenges/static/media/apple.ce9fd4bf.svg",
     "static/media/background.7b57e1c7.jpg": "/React-Challenges/static/media/background.7b57e1c7.jpg",
     "static/media/batman.6737fc34.jpg": "/React-Challenges/static/media/batman.6737fc34.jpg",
     "static/media/battery.908c84d6.svg": "/React-Challenges/static/media/battery.908c84d6.svg",
     "static/media/interstellar.c6e05e4d.jpg": "/React-Challenges/static/media/interstellar.c6e05e4d.jpg",
-    "static/media/loki.493d0f99.jpg": "/React-Challenges/static/media/loki.493d0f99.jpg"
+    "static/media/loki.493d0f99.jpg": "/React-Challenges/static/media/loki.493d0f99.jpg",
+    "static/media/react-logo.07cb26b0.png": "/React-Challenges/static/media/react-logo.07cb26b0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.844e838f.js",
-    "static/js/2.b6f0ea32.chunk.js",
-    "static/css/main.70b8a625.chunk.css",
-    "static/js/main.135c6c8a.chunk.js"
+    "static/js/runtime-main.d6ad709e.js",
+    "static/js/2.fb7cc3fc.chunk.js",
+    "static/css/main.6ef14d14.chunk.css",
+    "static/js/main.c6b4beb1.chunk.js"
   ]
 }
