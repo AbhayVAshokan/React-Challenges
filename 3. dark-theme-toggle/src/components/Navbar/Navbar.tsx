@@ -19,18 +19,18 @@ const Navbar: React.FC<{}> = () => {
   return (
     <nav className="flex w-full backdrop-blur-2xl bg-black bg-opacity-20 text-white text-sm font-medium items-center justify-between">
       {/* Menu bar */}
-      <div className="flex items-center">
+      <div className="flex items-centers">
         <img
           src={AppleLogo}
           alt="Apple Logo"
           className="w-8 h-6 ml-1 -mr-1 cursor-default hover:bg-white hover:bg-opacity-25 py-0.5 rounded-sm"
         />
-        <p className="px-2 rounded-xm font-bold cursor-default hover:bg-white hover:bg-opacity-25 py-0.5 rounded-sm">
+        <p className="px-2 rounded-xm font-bold cursor-default hover:bg-white hover:bg-opacity-25 py-0.5 rounded-sm sm:block hidden">
           System Preferences
         </p>
         {menuItems.map((item, index) => (
           <p
-            className="px-2 cursor-default hover:bg-white hover:bg-opacity-25 py-0.5 rounded-sm"
+            className="px-2 cursor-default hover:bg-white hover:bg-opacity-25 py-0.5 rounded-sm sm:block hidden"
             key={index}
           >
             {item}

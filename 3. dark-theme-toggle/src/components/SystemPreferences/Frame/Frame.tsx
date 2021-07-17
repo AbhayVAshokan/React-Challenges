@@ -1,6 +1,6 @@
 const Frame: React.FC<{}> = ({ children }) => {
   return (
-    <div className="bg-gray-100 rounded-lg w-1/2 m-auto shadow-lg relative top-20 dark:bg-dark-outerBody dark:border-gray-600 border">
+    <div className="bg-gray-100 rounded-lg w-full sm:w-11/12 md:w-9/12 lg:w-7/12 xl:w-1/2 m-auto shadow-lg relative top-20 dark:bg-dark-outerBody dark:border-gray-600 border">
       {/* Top bar */}
       <div className="flex items-center dark:bg-dark-title">
         <div className="flex w-full p-1 items-center">
@@ -59,7 +59,7 @@ const Frame: React.FC<{}> = ({ children }) => {
             Desktop & Screen Saver
           </p>
           <div className="flex items-center mr-0.5 rounded-sm justify-end flex-1">
-            <div className="flex items-center rounded-sm py-0.5 px-1 border border-gray-400 dark:border-gray-600 dark:text-gray-500">
+            <div className="xs:flex items-center rounded-sm py-0.5 px-1 border border-gray-400 dark:border-gray-600 dark:text-gray-500 hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 mr-1"
