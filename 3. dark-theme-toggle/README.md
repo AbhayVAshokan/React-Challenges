@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Dark Theme Toggle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Final Result: [Dark Theme Toggle](https://AbhayVAshokan.github.io/React-Challenges/darktheme-toggle)
 
-## Available Scripts
+Things will start getting spicy here. I have chosen a complex UI for this one. The aim is to build it with code readability in mind. There are scopes to use higher order components (HOC) to wrap the stateless functional components.
 
-In the project directory, you can run:
+## Challenge Description
 
-### `yarn start`
+<img src="../.github/.images/light-theme.jpg" alt="Light Theme" width="60%" />
+<img src="../.github/.images/dark-theme.jpg" alt="Dark Theme" width="60%" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Try to recreate the system preferences UI for MacOS. The particular setting allows the users to change their wallpapers.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The main challenge is the dark theme toggle. It is easy to implement it using [Tailwind CSS](https://tailwindcss.com) or [Styled Components](https://styled-components.com). Feel free to experiment it with any other library.
 
-### `yarn test`
+Toggling dark theme is possible either by using a button, or by using the system theme. For this challenge, I've chosen the system theme version. Goto your system settings in your OS and switch theme from Dark to Light to see the difference.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hint
 
-### `yarn build`
+In Tailwind CSS, you can use the `.dark` class to toggle the dark theme. First, edit your `tailwind.config.js` file to add the following line:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+- darkMode: false,
++ darkMode: "media",
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now, the dark theme of the web app will be based on the system theme of your OS. For official documentation check [here](https://tailwindcss.com/docs/dark-mode).
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For Styled Components, I have found a good [Medium article](https://medium.com/swlh/create-a-dark-mode-of-your-app-using-styled-components-a44bc5a59330) on how to implement it.

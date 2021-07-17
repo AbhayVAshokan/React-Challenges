@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Random User API Table
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Final Result: [Random User API Table](https://AbhayVAshokan.github.io/React-Challenges/randomuserapi-table)
 
-## Available Scripts
+This challenge steps up a little. All the real world applications that you build will involve API calls. For this challenge, you have to build a table that displays random users from [randomuser.me api](https://randomuser.me/api/) API.
 
-In the project directory, you can run:
+## Challenge Description
 
-### `yarn start`
+<img src="../.github/.images/randomuserapi-table.jpg" alt="randomuser-api table" width="60%" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Well, that's the easy part. The table must have a search feature to filter out the users based on the search input (name, gender, email). The user can click on the table headers to sort according to the selected column (ascending and descending).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The users must have the provision to select multiple rows, and export it as csv.
 
-### `yarn test`
+## Hint
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[axios](https://www.npmjs.com/package/axios) is a popular library for making API calls. The documentation is self explanatory.
 
-### `yarn build`
+There is an easy hack for filtering the rows based on the search input. All the users are represented in the form on javascript objects. `JSON.stringify` converts them into a string. A simple `String.prototype.substr()` can be used to check if the filter is applicable.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+users.filter((user) =>
+  JSON.stringify(Object.values(user))
+    .toLowerCase()
+    .includes(search.toLowerCase())
+),
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Date formatting can be easily done using `Date.prototype.toLocaleDateString()` instead of depending on heavy third party packages like [moment](https://www.npmjs.com/package/moment).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[react-csv](https://www.npmjs.com/package/react-csv) will come in handy to help with the csv export.
