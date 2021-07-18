@@ -163,7 +163,7 @@ const App: React.FC<{}> = () => {
 
   // Populating users on first render
   useEffect(() => {
-    axios.get("https://randomuser.me/api?results=500").then((res) => {
+    axios.get("https://randomuser.me/api?results=50").then((res) => {
       setUsers(
         res.data.results.map((item: APIResponse) => ({
           name: `${item.name.title}. ${item.name.first} ${item.name.last}`,

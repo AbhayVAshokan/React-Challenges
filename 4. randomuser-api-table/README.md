@@ -6,7 +6,7 @@ This challenge steps up a little. All the real world applications that you build
 
 <img src="../.github/.images/randomuserapi-table.jpg" alt="randomuser-api table" width="60%" />
 
-Make an API call to [https://randomuser.me/api?results=500](https://randomuser.me/api?results=500) on first render. It will return a JSON array of 500 random users. Display selected fields of each user in the form of a table.
+Make an API call to [https://randomuser.me/api?results=500](https://randomuser.me/api?results=50) on first render. It will return a JSON array of 50 random users. Display selected fields of each user in the form of a table. The complete API documentation can be found [here](https://randomuser.me/).
 
 Add a search field to the table. When the user enters a search term, filter out the users based on their name, gender, or email id.
 
