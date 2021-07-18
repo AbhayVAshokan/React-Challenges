@@ -16,13 +16,13 @@ const App: React.FC<{}> = () => {
   // Add a new todo item
   const addTodo = (title: string, description: string) => {
     setTodos([
-      ...todos,
       {
         id: `todo__${Math.random().toString().substr(2)}`,
         title,
         description,
         completed: false,
       },
+      ...todos,
     ]);
   };
 
