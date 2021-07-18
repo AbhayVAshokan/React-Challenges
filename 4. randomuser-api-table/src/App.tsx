@@ -209,7 +209,7 @@ const App: React.FC<{}> = () => {
 
     return (
       <th key={title} onClick={onClick}>
-        <div className="flex items-center cursor-pointer py-3 px-10">
+        <div className="flex items-center cursor-pointer py-3 px-5">
           <p
             className={[
               "font-bold",
@@ -217,6 +217,9 @@ const App: React.FC<{}> = () => {
               "duration-200",
               "hover:scale-125",
               "hover:text-black",
+              "lg:text-base",
+              "md:text-sm",
+              "text-xs",
               direction !== Direction.HIDDEN ? "text-black" : "text-gray-500",
             ].join(" ")}
           >
@@ -261,7 +264,7 @@ const App: React.FC<{}> = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center mx-20">
+    <div className="flex flex-col justify-center md:px-20 px-2 w-screen">
       <SearchBar
         onChange={onSearchItemChange}
         value={value}
@@ -271,7 +274,7 @@ const App: React.FC<{}> = () => {
         <thead className="bg-gray-300 mb-5 rounded-full sticky top-20 z-10">
           {headers.map((header) => getTableHeaderItem(header))}
         </thead>
-        <tbody>
+        <tbody className="w-full">
           {filterUsers(value).map((user: User) => (
             <TableItem
               key={`${user.name}__${Math.random().toString().substr(2)}`}

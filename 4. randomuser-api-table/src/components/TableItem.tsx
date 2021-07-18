@@ -36,9 +36,12 @@ const TableItem: React.FC<Props> = ({
         selected ? "hover:bg-green-200" : "hover:bg-gray-100",
         "hover:scale-105",
         selected ? ["scale-105", "bg-green-100"].join(" ") : "",
+        "lg:text-base",
+        "md:text-sm",
+        "text-xs",
       ].join(" ")}
     >
-      <td className="p-2">
+      <td className="p-2 w-6/12 md:w-5/12 lg:w-3/12">
         <div className="flex items-center">
           <img
             src={picture}
@@ -48,9 +51,9 @@ const TableItem: React.FC<Props> = ({
           <p>{name}</p>
         </div>
       </td>
-      <td className="p-2">{gender}</td>
-      <td className="p-2">{getFormattedDate(dob)}</td>
-      <td className="p-2">{email}</td>
+      <td className="p-2 w-1/12">{gender}</td>
+      <td className="p-2 w-2/12">{getFormattedDate(dob)}</td>
+      <td className="p-2 w-1/12 ">{email}</td>
     </tr>
   );
 };
